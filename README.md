@@ -1,43 +1,85 @@
-FinalProject
-============
 public class Bi_Pedmain {
-  public static void main(String args[]) {
-//objects
-		Monkey Object = new Monkey(7, 75,10,50,20);
-		Human Object2 = new Human(21, 170,26,15,5);
-		Robot Object3 = new Robot(9, 55,10,45,15);
-//Monkey
+	public static void main(String args[]) {
+		// objects
+		Monkey Object = new Monkey(7, 75, 20, 50, 20);
+		Human Object2 = new Human(21, 170, 26, 15, 5);
+		Robot Object3 = new Robot(9, 55, 15, 45, 15);
+
+		// Monkey
 		Object.name();
 		Object.talk();
 		System.out.println("monkey age :" + Object.getAge() + " yrs"
-				+"\nMonkey wieght:" + Object.getWeight() + " lbs"
-				+"\nMonkey Distance:"+Object.getRunningdistance()+"miles"
+				+ "\nMonkey wieght:" + Object.getWeight() + " lbs"
+				+ "\nMonkey Distance:" + Object.getRunningdistance() + "miles"
 				+ "\nmonkey Speed:" + Object.getSpeed() + " mph"
-				+ "\nMonkey acceleration:"+Object.getAcceleration());
-		System.out.println("walked:"+ Object.walk(Object.getRunningdistance())+" miles");
-		System.out.println("ran:"+ Object.run(Object.getSpeed())+" miles"+"\n"+"\n");
+				+ "\nMonkey acceleration:" + Object.getAcceleration());
+		//distance traveled recorded
+		for (int l = 0; l < 4; l++)
+			Object.walk(20);
+		for (int l = 0; l < 4; l++)
+			System.out.print(Object.Walkhistory()[l] + " miles walked\t ");
+		System.out.println("\t");
+		for (int x = 0; x < 5; x++)
+			Object.run(20);
+		for (int x = 0; x < 5; x++)
+			System.out.print(Object.Runhistory()[x] + " miles ran\t");
 
-//Human
+		
+		
+		
+		
+		
+		
+		// Human
 		Object2.name();
 		Object2.talk();
 		System.out.println("human age :" + Object2.getAge() + " yrs"
 				+ "\nHuman wieght:" + Object2.getWeight() + " lbs"
-				+"\nHuman Distance:"+Object2.getRunningdistance()+"miles"
+				+ "\nHuman Distance:" + Object2.getRunningdistance() + "miles"
 				+ "\nHuman Speed:" + Object2.getSpeed() + " mph"
-				+ "\nHuman acceleration:"+Object2.getAcceleration());
+				+ "\nHuman acceleration:" + Object2.getAcceleration());
+
+		// distance traveled recorded
+		for (int y = 0; y < 4; y++)
+			Object2.walk(26);
+		for (int y = 0; y < 4; y++)
+			System.out.print(Object2.Walkhistory()[y] + " miles walked\t ");
+		System.out.println("\t");
+		for (int x = 0; x < 5; x++)
+			Object2.run(26);
+		for (int x = 0; x < 5; x++)
+			System.out.print("\t" + Object2.Runhistory()[x] + " miles ran");
+
 		
-		System.out.println("walked:"+Object2.walk(Object2.getRunningdistance())+" miles");
-		System.out.println("ran:"+Object2.run(Object2.getSpeed())+" miles"+"\n"+"\n");
-//Robot
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// Robot
 		Object3.name();
 		Object3.talk();
 		System.out.println("robot age :" + Object3.getAge() + " yrs"
 				+ "\nrobot wieght:" + Object3.getWeight() + " lbs"
-				+"\nrobot Distance:"+Object3.getRunningdistance()+"miles"
+				+ "\nrobot Distance:" + Object3.getRunningdistance() + "miles"
 				+ "\nrobot Speed:" + Object3.getSpeed() + " mph"
-				+ "\nrobot acceleration:"+Object3.getAcceleration());
-		System.out.println("walked:"+Object3.walk(Object3.getRunningdistance())+"miles");
-		System.out.println("ran:"+Object3.run(Object3.getSpeed())+"miles"+"\n"+"\n");
+				+ "\nrobot acceleration:" + Object3.getAcceleration());
+
+		// distance traveled recorded
+		for (int z = 0; z < 4; z++)
+			Object3.walk(15);
+		for (int z = 0; z < 4; z++)
+			System.out.print(Object3.Walkhistory()[z] + "miles walked\t");
+		System.out.println("\t");
+		for (int x = 0; x < 5; x++)
+			Object3.run(15);
+		for (int x = 0; x < 5; x++)
+			System.out.print(Object3.Runhistory()[x] + " miles ran\t");
 
 	}
 
@@ -47,34 +89,29 @@ public class Bi_Pedmain {
 
 
 
-
 public abstract class Animal {
-  //encapsulation, do not want user to access variables. Do not want to give user direct access
+	// encapsulation, do not want user to get direct access to variables
+
 	private int age;
 	private int weight;
 	private int runningdistance;
 	private int speed;
 	private int acceleration;
-	private int []a;
-	private int x;
 
-	
-	//public String Properties(){
-	//	String details = "age:"+this.age+"weight:"+this.weight+"speed:"+this.speed+"acceleration:"+this.acceleration;
-	//return details;
-	//}
-	
-	//constructor!!!!!
-	public Animal(int age, int weight,int runningdistance, int speed,int acceleration) {
+	// constructor!!!!!
+	public Animal(int age, int weight, int runningdistance, int speed,
+			int acceleration) {
 		super();
 		this.age = age;
 		this.weight = weight;
-		this.runningdistance=runningdistance;
+		this.runningdistance = runningdistance;
 		this.speed = speed;
-		this.acceleration=acceleration;
-		
+		this.acceleration = acceleration;
+
 	}
-//user gets access to variables through set and get methods(I used source and get set method)
+
+	// user gets access to variables through set and get methods(I used source
+	// and get set method)
 	public int getAge() {
 		return age;
 	}
@@ -91,15 +128,15 @@ public abstract class Animal {
 		this.weight = weight;
 	}
 
-	public int getRunningdistance(){
+	public int getRunningdistance() {
 		return runningdistance;
-		
+
 	}
-	public void setRunningdistance(int runningdistance){
-		this.runningdistance =runningdistance;
+
+	public void setRunningdistance(int runningdistance) {
+		this.runningdistance = runningdistance;
 	}
-	
-	
+
 	public int getSpeed() {
 		return speed;
 	}
@@ -107,76 +144,39 @@ public abstract class Animal {
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
-	public void setAcceleration(int acceleration){
-		this.acceleration= acceleration;	
+
+	public void setAcceleration(int acceleration) {
+		this.acceleration = acceleration;
 	}
-	public int getAcceleration(){
+
+	public int getAcceleration() {
 		return acceleration;
 	}
-	//overridden property 
+
+	// overridden property
 	public void name() {
-		System.out.println("UNknown name!");
+		System.out.println("Uknown/no name!");
 	}
-// method 1, overridden
+
+	// method 1, overridden
 	public void talk() {
 		System.out.println("cannot talk!");
 	}
-//method 2, overridden
+
+	// method 2, overridden
 	public int walk(int walkingdistance) {
-		int step=0;
-		walkingdistance=step;
-		return  (0+ (int) (Math.random() * step));
+		int step = 0;
+		walkingdistance = step;
+		return (0 + (int) (Math.random() * step));
 	}
-//method 3, overridden
+
+	// method 3, overridden
 	public int run(int runningdistance) {
-		int quickness=0;
-		runningdistance=quickness;
-	a[x]=0 + (int) (Math.random() * quickness);
-		return a[x++];
-	}
-//Run movement history
-	public int[]Runhistory(){
-		return a;
+		int quickness = 0;
+		runningdistance = quickness;
+		return 0 + (int) (Math.random() * quickness);
 	}
 
-}
-
-
-
-public class Human extends Animal {
-  
-	int[]a;
-	int x;
-	
-	public Human(int age, int weight,int runningdistance, int speed, int acceleration) {
-		super(age, weight,runningdistance, speed, acceleration);
-		
-	}
-
-	public void name() {
-		System.out.println("My name is Mesut Ozil!!");
-	}
-
-	public void talk() {
-		System.out.println("Hello!");
-
-	}
-	public int walk(int runningdistance){
-		int feet;
-		feet=runningdistance;
-		return (0 + (int) (Math.random() * feet));
-		
-	}
-	public int run(int runningdistance) {
-		int velocity2=0;
-		velocity2=runningdistance;
-		a[x]=0 + (int) (Math.random() * velocity2);
-		return a[x++];
-	}
-	//Run movement history
-		public int[]Runhistory(){
-			return a;
-		}
 }
 
 
@@ -185,11 +185,14 @@ public class Human extends Animal {
 
 public class Monkey extends Animal {
 
-  int[]a;
-	int x;
-	
-	public Monkey(int age, int weight,int runningdistance, int speed, int acceleration) {
-		super(age, weight, runningdistance,speed, acceleration);
+	private int[] a = new int[5];
+	private int[] w = new int[4];
+	private int x;
+	private int l;
+
+	public Monkey(int age, int weight, int runningdistance, int speed,
+			int acceleration) {
+		super(age, weight, runningdistance, speed, acceleration);
 
 	}
 
@@ -199,60 +202,146 @@ public class Monkey extends Animal {
 
 	public void talk() {
 		System.out.println("Oooh ooh aah aaah!");
-	
 
 	}
-	public int walk(int runningdistance){
+
+	public int walk(int runningdistance) {
 		int paw;
-		paw=runningdistance;
-		return (0 + (int) (Math.random() * paw));
+		paw = runningdistance;
+		w[l] = (0 + (int) (Math.random() * paw));
+		return a[l++];
 	}
-	public int run(int speed) {
+
+	public int run(int runningdistance) {
 		int velocity;
-		velocity=speed;
-		a[x]=0 + (int) (Math.random() * velocity);
+		velocity = runningdistance;
+		a[x] = 0 + (int) (Math.random() * velocity);
 		return a[x++];
-		}
-		
-	
-	public int[]Runhistory(){
+	}
+
+	public int collision(int speed) {
+		return 0;
+
+	}
+
+	// movement history
+	public int[] Runhistory() {
 		return a;
-		}
+	}
+
+	public int[] Walkhistory() {
+		return w;
+	}
 }
+
+
+
+public class Human extends Animal {
+
+	private int[] a = new int[5];
+	private int[] b = new int[4];
+	private int x;
+	private int y;
+
+	public Human(int age, int weight, int runningdistance, int speed,
+			int acceleration) {
+		super(age, weight, runningdistance, speed, acceleration);
+
+	}
+
+	public void name() {
+		System.out.println("\n\n\nMy name is Mesut Ozil!!");
+	}
+
+	public void talk() {
+		System.out.println("Hello!");
+
+	}
+
+	public int walk(int runningdistance) {
+		int feet;
+		feet = runningdistance;
+		b[y] = 0 + (int) (Math.random() * feet);
+		return b[y++];
+	}
+
+	public int run(int runningdistance) {
+		int velocity2 = 0;
+		velocity2 = runningdistance;
+		a[x] = 0 + (int) (Math.random() * velocity2);
+		return a[x++];
+	}
+
+	public int collision(int speed) {
+		return 0;
+
+	}
+
+	// movement history
+	public int[] Runhistory() {
+		return a;
+	}
+
+	public int[] Walkhistory() {
+		return b;
+	}
+}
+
 
 
 
 
 
 public class Robot extends Animal {
-  int []a;
-	int x;
-	public Robot(int age, int weight, int runningdistance,int speed, int acceleration) {
-		super(age, weight,runningdistance, speed,acceleration);
+	private int[] a = new int[5];
+	private int[] c = new int[4];
+	private int x;
+	private int z;
+
+	public Robot(int age, int weight, int runningdistance, int speed,
+			int acceleration) {
+		super(age, weight, runningdistance, speed, acceleration);
 
 	}
 
 	public void name() {
-		System.out.println("My name is E-102 GAM-MA.");
+		System.out.println("\n\n\nMy name is E-102 GAM-MA.");
 	}
 
 	public void talk() {
 		System.out.println("HEL-LO.");
 
 	}
-	public int walk(int runningdistance){
+
+	public int walk(int runningdistance) {
 		int metalfeet;
-		metalfeet=runningdistance;
-		return (0 + (int) (Math.random() *metalfeet));
-		}
-	public int run(int runningdistance) {
-		int velocity3=0;
-		velocity3=runningdistance;
-		a[x]=0 + (int) (Math.random() * velocity3);
-		return a[x++];
-		
+		metalfeet = runningdistance;
+		c[z] = (0 + (int) (Math.random() * metalfeet));
+		return c[z++];
+
 	}
-	public int[]Runhistory(){
+
+	public int run(int runningdistance) {
+		int velocity3 = 0;
+		velocity3 = runningdistance;
+		a[x] = 0 + (int) (Math.random() * velocity3);
+		return a[x++];
+
+	}
+
+	public int collision(int speed) {
+		return 0;
+	}
+
+	// movement history
+	public int[] Runhistory() {
 		return a;
-		}
+	}
+
+	public int[] Walkhistory() {
+		return c;
+	}
 }
+
+
+
