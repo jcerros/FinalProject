@@ -1,12 +1,12 @@
 public class Robot extends Animal {
-  private int[] a = new int[5];
-	private int[] c = new int[4];
+	private int[] a = new int[5];
+	private int[] c = new int[5];
+
 	private int x;
 	private int z;
 
-	public Robot(int age, int weight, int runningdistance, int speed,
-			int acceleration) {
-		super(age, weight, runningdistance, speed, acceleration);
+	public Robot(int age, int weight, int distance, int speed, int acceleration) {
+		super(age, weight, distance, speed, acceleration);
 
 	}
 
@@ -19,17 +19,17 @@ public class Robot extends Animal {
 
 	}
 
-	public int walk(int runningdistance) {
+	public int walk(int distance) {
 		int metalfeet;
-		metalfeet = runningdistance;
+		metalfeet = distance;
 		c[z] = (0 + (int) (Math.random() * metalfeet));
 		return c[z++];
 
 	}
 
-	public int run(int runningdistance) {
+	public int run(int distance) {
 		int velocity3 = 0;
-		velocity3 = runningdistance;
+		velocity3 = distance;
 		a[x] = 0 + (int) (Math.random() * velocity3);
 		return a[x++];
 
