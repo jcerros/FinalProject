@@ -1,83 +1,75 @@
 public class Bi_Pedmain {
 	public static void main(String args[]) {
-		// objects
+
+		
+// objects
 		Monkey Object = new Monkey(7, 75, 20, 50, 20);
 		Human Object2 = new Human(21, 170, 26, 15, 5);
 		Robot Object3 = new Robot(9, 55, 15, 45, 15);
 
-		// Monkey
+
+// Monkey
 		Object.name();
 		Object.talk();
 		System.out.println("monkey age :" + Object.getAge() + " yrs"
 				+ "\nMonkey wieght:" + Object.getWeight() + " lbs"
-				+ "\nMonkey Distance:" + Object.getRunningdistance() + "miles"
+				+ "\nMonkey Distance:" + Object.getDistance() + "miles"
 				+ "\nmonkey Speed:" + Object.getSpeed() + " mph"
 				+ "\nMonkey acceleration:" + Object.getAcceleration());
 		//distance traveled recorded
-		for (int l = 0; l < 4; l++)
-			Object.walk(20);
-		for (int l = 0; l < 4; l++)
-			System.out.print(Object.Walkhistory()[l] + " miles walked\t ");
+		for (int l = 0; l < 5; l++)
+			Object.walk(Object.getDistance());
+		for (int l = 0; l < 5; l++)
+			System.out.print(Object.Walkhistory()[l] + " miles walked  ");
 		System.out.println("\t");
 		for (int x = 0; x < 5; x++)
-			Object.run(20);
+			Object.run(Object.getDistance());
 		for (int x = 0; x < 5; x++)
 			System.out.print(Object.Runhistory()[x] + " miles ran\t");
 
+
 		
 		
-		
-		
-		
-		
-		// Human
+// Human
 		Object2.name();
 		Object2.talk();
 		System.out.println("human age :" + Object2.getAge() + " yrs"
 				+ "\nHuman wieght:" + Object2.getWeight() + " lbs"
-				+ "\nHuman Distance:" + Object2.getRunningdistance() + "miles"
+				+ "\nHuman Distance:" + Object2.getDistance() + "miles"
 				+ "\nHuman Speed:" + Object2.getSpeed() + " mph"
 				+ "\nHuman acceleration:" + Object2.getAcceleration());
 
 		// distance traveled recorded
-		for (int y = 0; y < 4; y++)
-			Object2.walk(26);
-		for (int y = 0; y < 4; y++)
-			System.out.print(Object2.Walkhistory()[y] + " miles walked\t ");
+		for (int y = 0; y < 5; y++)
+			Object2.walk(Object2.getDistance());
+		for (int y = 0; y < 5; y++)
+			System.out.print(Object2.Walkhistory()[y] + " miles walked  ");
 		System.out.println("\t");
 		for (int x = 0; x < 5; x++)
-			Object2.run(26);
+			Object2.run(Object2.getDistance());
 		for (int x = 0; x < 5; x++)
 			System.out.print("\t" + Object2.Runhistory()[x] + " miles ran");
 
+
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		// Robot
+// Robot
 		Object3.name();
 		Object3.talk();
 		System.out.println("robot age :" + Object3.getAge() + " yrs"
 				+ "\nrobot wieght:" + Object3.getWeight() + " lbs"
-				+ "\nrobot Distance:" + Object3.getRunningdistance() + "miles"
+				+ "\nrobot Distance:" + Object3.getDistance() + "miles"
 				+ "\nrobot Speed:" + Object3.getSpeed() + " mph"
 				+ "\nrobot acceleration:" + Object3.getAcceleration());
 
 		// distance traveled recorded
-		for (int z = 0; z < 4; z++)
-			Object3.walk(15);
-		for (int z = 0; z < 4; z++)
+		for (int z = 0; z < 5; z++)
+			Object3.walk(Object3.getDistance());
+		for (int z = 0; z < 5; z++)
 			System.out.print(Object3.Walkhistory()[z] + "miles walked\t");
 		System.out.println("\t");
 		for (int x = 0; x < 5; x++)
-			Object3.run(15);
+			Object3.run(Object3.getDistance());
 		for (int x = 0; x < 5; x++)
 			System.out.print(Object3.Runhistory()[x] + " miles ran\t");
 
@@ -88,23 +80,23 @@ public class Bi_Pedmain {
 
 
 
-
 public abstract class Animal {
-	// encapsulation, do not want user to get direct access to variables
+
+// encapsulation, do not want user to get direct access to variables
 
 	private int age;
 	private int weight;
-	private int runningdistance;
+	private int distance;
 	private int speed;
 	private int acceleration;
 
-	// constructor!!!!!
-	public Animal(int age, int weight, int runningdistance, int speed,
-			int acceleration) {
+// constructor!!!!!
+	
+	public Animal(int age, int weight, int distance, int speed, int acceleration) {
 		super();
 		this.age = age;
 		this.weight = weight;
-		this.runningdistance = runningdistance;
+		this.distance = distance;
 		this.speed = speed;
 		this.acceleration = acceleration;
 
@@ -112,6 +104,7 @@ public abstract class Animal {
 
 	// user gets access to variables through set and get methods(I used source
 	// and get set method)
+	
 	public int getAge() {
 		return age;
 	}
@@ -128,13 +121,13 @@ public abstract class Animal {
 		this.weight = weight;
 	}
 
-	public int getRunningdistance() {
-		return runningdistance;
+	public int getDistance() {
+		return distance;
 
 	}
 
-	public void setRunningdistance(int runningdistance) {
-		this.runningdistance = runningdistance;
+	public void setDistance(int distance) {
+		this.distance = distance;
 	}
 
 	public int getSpeed() {
@@ -164,16 +157,16 @@ public abstract class Animal {
 	}
 
 	// method 2, overridden
-	public int walk(int walkingdistance) {
+	public int walk(int distance) {
 		int step = 0;
-		walkingdistance = step;
+		distance = step;
 		return (0 + (int) (Math.random() * step));
 	}
 
 	// method 3, overridden
-	public int run(int runningdistance) {
+	public int run(int distance) {
 		int quickness = 0;
-		runningdistance = quickness;
+		distance = quickness;
 		return 0 + (int) (Math.random() * quickness);
 	}
 
@@ -181,18 +174,16 @@ public abstract class Animal {
 
 
 
-
-
 public class Monkey extends Animal {
 
 	private int[] a = new int[5];
-	private int[] w = new int[4];
+	private int[] w = new int[5];
+
 	private int x;
 	private int l;
 
-	public Monkey(int age, int weight, int runningdistance, int speed,
-			int acceleration) {
-		super(age, weight, runningdistance, speed, acceleration);
+	public Monkey(int age, int weight, int distance, int speed, int acceleration) {
+		super(age, weight, distance, speed, acceleration);
 
 	}
 
@@ -205,21 +196,22 @@ public class Monkey extends Animal {
 
 	}
 
-	public int walk(int runningdistance) {
+	public int walk(int distance) {
 		int paw;
-		paw = runningdistance;
+		paw = distance;
 		w[l] = (0 + (int) (Math.random() * paw));
 		return a[l++];
 	}
 
-	public int run(int runningdistance) {
+	public int run(int distance) {
 		int velocity;
-		velocity = runningdistance;
+		velocity = distance;
 		a[x] = 0 + (int) (Math.random() * velocity);
 		return a[x++];
 	}
 
-	public int collision(int speed) {
+	public int collision() {
+
 		return 0;
 
 	}
@@ -232,6 +224,7 @@ public class Monkey extends Animal {
 	public int[] Walkhistory() {
 		return w;
 	}
+
 }
 
 
@@ -239,13 +232,13 @@ public class Monkey extends Animal {
 public class Human extends Animal {
 
 	private int[] a = new int[5];
-	private int[] b = new int[4];
+	private int[] b = new int[5];
+	
 	private int x;
 	private int y;
 
-	public Human(int age, int weight, int runningdistance, int speed,
-			int acceleration) {
-		super(age, weight, runningdistance, speed, acceleration);
+	public Human(int age, int weight, int distance, int speed, int acceleration) {
+		super(age, weight, distance, speed, acceleration);
 
 	}
 
@@ -258,16 +251,16 @@ public class Human extends Animal {
 
 	}
 
-	public int walk(int runningdistance) {
+	public int walk(int distance) {
 		int feet;
-		feet = runningdistance;
+		feet = distance;
 		b[y] = 0 + (int) (Math.random() * feet);
 		return b[y++];
 	}
 
-	public int run(int runningdistance) {
+	public int run(int distance) {
 		int velocity2 = 0;
-		velocity2 = runningdistance;
+		velocity2 = distance;
 		a[x] = 0 + (int) (Math.random() * velocity2);
 		return a[x++];
 	}
@@ -291,16 +284,15 @@ public class Human extends Animal {
 
 
 
-
 public class Robot extends Animal {
 	private int[] a = new int[5];
-	private int[] c = new int[4];
+	private int[] c = new int[5];
+
 	private int x;
 	private int z;
 
-	public Robot(int age, int weight, int runningdistance, int speed,
-			int acceleration) {
-		super(age, weight, runningdistance, speed, acceleration);
+	public Robot(int age, int weight, int distance, int speed, int acceleration) {
+		super(age, weight, distance, speed, acceleration);
 
 	}
 
@@ -313,17 +305,17 @@ public class Robot extends Animal {
 
 	}
 
-	public int walk(int runningdistance) {
+	public int walk(int distance) {
 		int metalfeet;
-		metalfeet = runningdistance;
+		metalfeet = distance;
 		c[z] = (0 + (int) (Math.random() * metalfeet));
 		return c[z++];
 
 	}
 
-	public int run(int runningdistance) {
+	public int run(int distance) {
 		int velocity3 = 0;
-		velocity3 = runningdistance;
+		velocity3 = distance;
 		a[x] = 0 + (int) (Math.random() * velocity3);
 		return a[x++];
 
@@ -342,6 +334,3 @@ public class Robot extends Animal {
 		return c;
 	}
 }
-
-
-
