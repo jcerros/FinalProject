@@ -20,8 +20,8 @@ public abstract class Animal {
 
 	}
 
-	// user gets access to variables through set and get methods(I used source
-	// and get set method)
+// user gets access to variables through set and get methods(I used source
+// and get set method)
 	
 	public int getAge() {
 		return age;
