@@ -1,13 +1,13 @@
 public class Human extends Animal {
 
-  private int[] a = new int[5];
-	private int[] b = new int[4];
+	private int[] a = new int[5];
+	private int[] b = new int[5];
+	
 	private int x;
 	private int y;
 
-	public Human(int age, int weight, int runningdistance, int speed,
-			int acceleration) {
-		super(age, weight, runningdistance, speed, acceleration);
+	public Human(int age, int weight, int distance, int speed, int acceleration) {
+		super(age, weight, distance, speed, acceleration);
 
 	}
 
@@ -20,16 +20,16 @@ public class Human extends Animal {
 
 	}
 
-	public int walk(int runningdistance) {
+	public int walk(int distance) {
 		int feet;
-		feet = runningdistance;
+		feet = distance;
 		b[y] = 0 + (int) (Math.random() * feet);
 		return b[y++];
 	}
 
-	public int run(int runningdistance) {
+	public int run(int distance) {
 		int velocity2 = 0;
-		velocity2 = runningdistance;
+		velocity2 = distance;
 		a[x] = 0 + (int) (Math.random() * velocity2);
 		return a[x++];
 	}
