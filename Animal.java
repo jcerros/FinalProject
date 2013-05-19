@@ -1,19 +1,20 @@
 public abstract class Animal {
-  // encapsulation, do not want user to get direct access to variables
+
+// encapsulation, do not want user to get direct access to variables
 
 	private int age;
 	private int weight;
-	private int runningdistance;
+	private int distance;
 	private int speed;
 	private int acceleration;
 
-	// constructor!!!!!
-	public Animal(int age, int weight, int runningdistance, int speed,
-			int acceleration) {
+// constructor!!!!!
+	
+	public Animal(int age, int weight, int distance, int speed, int acceleration) {
 		super();
 		this.age = age;
 		this.weight = weight;
-		this.runningdistance = runningdistance;
+		this.distance = distance;
 		this.speed = speed;
 		this.acceleration = acceleration;
 
@@ -21,6 +22,7 @@ public abstract class Animal {
 
 	// user gets access to variables through set and get methods(I used source
 	// and get set method)
+	
 	public int getAge() {
 		return age;
 	}
@@ -37,13 +39,13 @@ public abstract class Animal {
 		this.weight = weight;
 	}
 
-	public int getRunningdistance() {
-		return runningdistance;
+	public int getDistance() {
+		return distance;
 
 	}
 
-	public void setRunningdistance(int runningdistance) {
-		this.runningdistance = runningdistance;
+	public void setDistance(int distance) {
+		this.distance = distance;
 	}
 
 	public int getSpeed() {
@@ -73,16 +75,16 @@ public abstract class Animal {
 	}
 
 	// method 2, overridden
-	public int walk(int walkingdistance) {
+	public int walk(int distance) {
 		int step = 0;
-		walkingdistance = step;
+		distance = step;
 		return (0 + (int) (Math.random() * step));
 	}
 
 	// method 3, overridden
-	public int run(int runningdistance) {
+	public int run(int distance) {
 		int quickness = 0;
-		runningdistance = quickness;
+		distance = quickness;
 		return 0 + (int) (Math.random() * quickness);
 	}
 
