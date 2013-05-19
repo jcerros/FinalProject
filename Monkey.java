@@ -1,13 +1,13 @@
 public class Monkey extends Animal {
 
-  private int[] a = new int[5];
-	private int[] w = new int[4];
+	private int[] a = new int[5];
+	private int[] w = new int[5];
+
 	private int x;
 	private int l;
 
-	public Monkey(int age, int weight, int runningdistance, int speed,
-			int acceleration) {
-		super(age, weight, runningdistance, speed, acceleration);
+	public Monkey(int age, int weight, int distance, int speed, int acceleration) {
+		super(age, weight, distance, speed, acceleration);
 
 	}
 
@@ -20,21 +20,22 @@ public class Monkey extends Animal {
 
 	}
 
-	public int walk(int runningdistance) {
+	public int walk(int distance) {
 		int paw;
-		paw = runningdistance;
+		paw = distance;
 		w[l] = (0 + (int) (Math.random() * paw));
 		return a[l++];
 	}
 
-	public int run(int runningdistance) {
+	public int run(int distance) {
 		int velocity;
-		velocity = runningdistance;
+		velocity = distance;
 		a[x] = 0 + (int) (Math.random() * velocity);
 		return a[x++];
 	}
 
-	public int collision(int speed) {
+	public int collision() {
+
 		return 0;
 
 	}
@@ -47,4 +48,5 @@ public class Monkey extends Animal {
 	public int[] Walkhistory() {
 		return w;
 	}
+
 }
