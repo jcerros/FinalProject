@@ -200,7 +200,7 @@ public class Monkey extends Animal {
 		int paw;
 		paw = distance;
 		w[l] = (0 + (int) (Math.random() * paw));
-		return a[l++];
+		return w[l++];
 	}
 
 	public int run(int distance) {
